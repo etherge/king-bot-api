@@ -26,12 +26,14 @@ const languages = {
 		lang_feature_raise_fields: 'raise fields',
 		lang_feature_trade_route: 'trade route',
 		lang_feature_timed_attack: 'timed attack',
+		lang_feature_build_unit: 'units builder',
 
 		lang_feature_desc_hero: 'this feature sends the hero automaticly on an adventure if the health is above given percentage.',
 		lang_feature_desc_queue: 'this is an endless building queue. don\'t change the village once it\'s set. if you want to change the village, just do another building queue feature with your desired village',
 		lang_feature_desc_raise_fields: 'this feature will raise all your fields to a given level on it\'s own. it will always upgrade the type which got the lowest storage.',
 		lang_feature_desc_farming: 'this feature will just send the farmlist in a given interval.',
 		lang_feature_desc_trade_route: 'sends merchants from the origin village to the desination at a given interval.',
+		lang_feature_desc_build_unit: 'build units automaticaly',
 
 		lang_home_features: 'your features',
 		lang_home_name: 'feature name',

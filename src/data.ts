@@ -1,3 +1,8 @@
+export enum troops_type {
+	phalanx = 21,
+	swordsman = 22
+}
+
 export enum tribe {
 	roman = '1',
 	teuton = '2',
