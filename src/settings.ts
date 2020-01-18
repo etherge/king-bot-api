@@ -16,6 +16,7 @@ class settings {
 	sitter_type: string;
 	sitter_name: string;
 	ip: string;
+	mail_pwd: string;
 
 	async init(): Promise<void> {
 		try {
@@ -34,10 +35,12 @@ class settings {
 		let cred_array: string[] = cred.trim().split(';');
 		let sitter_type: string = '';
 		let sitter_name: string = '';
+		let mail_pwd: string = '';
 
 		if (cred_array.length >= 5) {
 			sitter_type = cred_array[3];
 			sitter_name = cred_array[4];
+			mail_pwd = cred_array[5];
 		}
 
 		return {
@@ -45,7 +48,8 @@ class settings {
 			password: cred_array[1],
 			gameworld: cred_array[2],
 			sitter_name,
-			sitter_type
+			sitter_type,
+			mail_pwd,
 		};
 	}
 
@@ -70,6 +74,7 @@ interface Icredentials {
 	gameworld: string
 	sitter_name: string
 	sitter_type: string
+	mail_pwd: string
 }
 
 export default new settings();

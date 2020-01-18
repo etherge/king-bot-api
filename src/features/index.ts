@@ -6,5 +6,7 @@ import raise_fields from './raise_fields';
 import trade_route from './trade_route';
 import timed_attack from './timed_attack';
 import unit_builder from './build_units'
+import attack_alerter from './attack_alerts'
 
-export { send_farmlist, auto_adventure, finish_earlier, adventure_type, building_queue, raise_fields, trade_route, timed_attack, unit_builder };
+export { send_farmlist, auto_adventure, finish_earlier, adventure_type, building_queue, 
+    raise_fields, trade_route, timed_attack, unit_builder, attack_alerter};

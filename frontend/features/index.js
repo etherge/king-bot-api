@@ -4,7 +4,6 @@ import BuildingQueue from './building_queue';
 import RaiseFields from './raise_fields';
 import TradeRoute from './trade_route';
 import TimedAttack from './timed_attack';
-import UnitBuilder from './units_builder'
 
 const features = {
 	hero: {
@@ -30,10 +29,6 @@ const features = {
 	timed_attack: {
 		navbar: true,
 		component: TimedAttack,
-	},
-	unit_builder: {
-		navbar: true,
-		component: UnitBuilder
 	},
 };
 

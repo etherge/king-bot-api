@@ -12,7 +12,7 @@ import { find_state_data } from './util';
 import {
 	raise_fields, building_queue,
 	finish_earlier, auto_adventure, send_farmlist,
-	trade_route, timed_attack, unit_builder
+	trade_route, timed_attack, unit_builder, attack_alerter
 } from './features';
 import { farming, village, player } from './gamedata';
 import database from './database';
@@ -28,7 +28,8 @@ class server {
 		raise_fields,
 		trade_route,
 		timed_attack,
-		unit_builder
+		unit_builder,
+		attack_alerter
 	];
 
 	constructor() {

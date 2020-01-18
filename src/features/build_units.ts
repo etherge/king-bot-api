@@ -103,7 +103,7 @@ class unit_builder extends feature_single {
 				log("Build a unit in " + vo.villageName);			
 				api.build_units(vo.villageId, vo.locationId, troops_type.phalanx, 1);
 			}
-			await sleep(480);
+			await sleep(300);
 		}
 
 		this.running = false;

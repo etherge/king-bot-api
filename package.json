@@ -58,7 +58,8 @@
     "uniqid": "^5.1.0",
     "unistore": "^3.5.0",
     "winston": "^3.1.0",
-    "winston-logzio": "^3.0.3"
+    "winston-logzio": "^3.0.3",
+    "nodemailer": "^6.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
