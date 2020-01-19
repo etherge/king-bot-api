@@ -100,8 +100,12 @@ class unit_builder extends feature_single {
 
 		while (this.options.run) {
 			for (let vo of params) {
-				log("Build a unit in " + vo.villageName);			
-				api.build_units(vo.villageId, vo.locationId, troops_type.phalanx, 1);
+				log("Build a unit in " + vo.villageName);
+				if (vo.villageName == "K01") {
+					api.build_units(vo.villageId, vo.locationId, troops_type.swordsman, 1);
+				} else {
+					api.build_units(vo.villageId, vo.locationId, troops_type.phalanx, 1);
+				}		
 			}
 			await sleep(300);
 		}

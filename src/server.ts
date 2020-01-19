@@ -16,6 +16,7 @@ import {
 } from './features';
 import { farming, village, player } from './gamedata';
 import database from './database';
+import auto_reinforcement from './features/auto_reinforcement';
 
 class server {
 	app: any = null;
@@ -29,7 +30,8 @@ class server {
 		trade_route,
 		timed_attack,
 		unit_builder,
-		attack_alerter
+		attack_alerter,
+		auto_reinforcement
 	];
 
 	constructor() {
