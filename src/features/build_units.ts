@@ -65,7 +65,8 @@ class unit_builder extends feature_single {
 		interface paramObj {
 			villageId: number;
 			villageName: String; 
-			locationId: number
+			locationId: number;
+			stableId: number;
 		}
 		let params: paramObj[] = [];
 		
@@ -74,9 +75,7 @@ class unit_builder extends feature_single {
 			let village_id = villageObj.data.villageId;
 			let village_name = villageObj.data.name;
 			let location_id;
-
-			if(village_name == "K03")
-				continue;
+			let stable_id;
 
 			const queue_ident: string = village.building_collection_ident + village_id;
 			const response: any[] = await api.get_cache([queue_ident]);
@@ -90,22 +89,25 @@ class unit_builder extends feature_single {
 				if (Number(build.buildingType) == 19)
 					if (Number(build.lvl) > 0) {
 						location_id = build.locationId;
-						break;
+					}
+
+				if (Number(build.buildingType) == 20)
+					if (Number(build.lvl) > 0) {
+						stable_id = build.locationId;
 					}
 			}
 
-			params.push({villageId: village_id, villageName: village_name, locationId: location_id});
+			params.push({villageId: village_id, villageName: village_name, locationId: location_id, stableId: stable_id});
+			// params.push({villageId: village_id, villageName: village_name, locationId: location_id});
 			log(params);
 		}
 
 		while (this.options.run) {
 			for (let vo of params) {
 				log("Build a unit in " + vo.villageName);
-				if (vo.villageName == "K01") {
-					api.build_units(vo.villageId, vo.locationId, troops_type.swordsman, 1);
-				} else {
-					api.build_units(vo.villageId, vo.locationId, troops_type.phalanx, 1);
-				}		
+				api.build_units(vo.villageId, vo.locationId, troops_type.swordsman, 1);
+				api.build_units(vo.villageId, vo.stableId, troops_type.thunder, 1);
+					// api.build_units(vo.villageId, vo.locationId, troops_type.phalanx, 1);	
 			}
 			await sleep(300);
 		}
