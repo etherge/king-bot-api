@@ -60,6 +60,7 @@ class auto_reinforcement extends feature_single {
 
 	async run(): Promise<void> {
 		log(`Auto reinforcement : ${this.options.uuid} started`);
+		const K01_village_id: number = 537477118;
 		const K02_village_id: number = 537509887;
 		const K03_village_id: number = 537444351;
 		// const K02_ident: string = "Collection:Troops:stationary:537509887";
@@ -69,6 +70,7 @@ class auto_reinforcement extends feature_single {
 			this.auto_reinforcement(K02_village_id);
 			log("3333333");
 			this.auto_reinforcement(K03_village_id);
+			this.auto_reinforcement(K01_village_id);
 			await sleep(300);
 		}
 		this.running = false;
@@ -84,7 +86,8 @@ class auto_reinforcement extends feature_single {
 
 		for(let troop of response[0].data) {
 			let units: Iunits = troop.data.units;
-			this.sendTroopsToK01(village_id, units);
+			//this.sendTroopsToK01(village_id, units);
+			this.sendTroopsToCell(village_id, units);
 		}
 	}
 
@@ -92,6 +95,12 @@ class auto_reinforcement extends feature_single {
 		log("222222")
 		api.send_units(from_village, 537477118, units, 5);
 	}
+
+	async sendTroopsToCell(from_village: number, units: Iunits) {
+		log("222222")
+		api.send_units(from_village, 537509882, units, 5);
+	}
+
 }
 
 export default new auto_reinforcement();
