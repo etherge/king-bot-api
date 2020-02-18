@@ -1,7 +1,8 @@
 export enum troops_type {
 	phalanx = 21,
 	swordsman = 22,
-	thunder = 24
+	thunder = 24,
+	druidrider = 25,
 }
 
 export enum tribe {

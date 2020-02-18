@@ -98,7 +98,7 @@ class auto_reinforcement extends feature_single {
 
 	async sendTroopsToCell(from_village: number, units: Iunits) {
 		log("222222")
-		api.send_units(from_village, 537509882, units, 5);
+		api.send_units(from_village, 537477122, units, 5);
 	}
 
 }
