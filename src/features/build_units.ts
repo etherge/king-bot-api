@@ -106,17 +106,18 @@ class unit_builder extends feature_single {
 			for (let vo of params) {
 				log("Build a unit in " + vo.villageName);
 				if(vo.villageName == 'K01') {
+					api.build_units(vo.villageId, 29, troops_type.swordsman, 2);
+					api.build_units(vo.villageId, 34, troops_type.haeduan, 1);
+				} else if(vo.villageName == 'K04') {
 					api.build_units(vo.villageId, 29, troops_type.swordsman, 1);
-				} else if(vo.villageName == 'K02') {
-					api.build_units(vo.villageId, 29, troops_type.phalanx, 1);
-				} else if(vo.villageName == 'K03') {
-					api.build_units(vo.villageId, 34, troops_type.druidrider, 1);
+				} else {
+					continue
 				}
 				
 				//api.build_units(vo.villageId, vo.stableId, troops_type.thunder, 1);
 					// api.build_units(vo.villageId, vo.locationId, troops_type.phalanx, 1);	
 			}
-			await sleep(300);
+			await sleep(240);
 		}
 
 		this.running = false;
