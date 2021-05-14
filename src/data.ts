@@ -6,6 +6,10 @@ export enum troops_type {
 	haeduan = 26,
 }
 
+export enum locations {
+	barracks = 29,
+}
+
 export enum tribe {
 	roman = '1',
 	teuton = '2',

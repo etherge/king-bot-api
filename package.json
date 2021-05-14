@@ -7,6 +7,7 @@
     "test": "tsc && webpack && npm run lint",
     "start": "node main.js",
     "dev": "ts-node dev_main.js",
+    "com7":"ts-node com7.js",
     "build": "tsc && webpack",
     "server": "webpack-dev-server --mode development",
     "watch": "nodemon -e ts -w ./src -x npm run dev",

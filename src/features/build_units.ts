@@ -5,7 +5,7 @@ import api from '../api';
 import logger from '../logger';
 import uniqid from 'uniqid';
 import { Ifeature, feature_single, Ioptions, Iresponse } from './feature';
-import { buildings, troops_type } from '../data';
+import { locations, troops_type } from '../data';
 
 
 class unit_builder extends feature_single {
@@ -104,11 +104,12 @@ class unit_builder extends feature_single {
 
 		while (this.options.run) {
 			for (let vo of params) {
-				log("Build a unit in " + vo.villageName);
 				if(vo.villageName == 'K01') {
-					api.build_units(vo.villageId, 29, troops_type.swordsman, 2);
-					api.build_units(vo.villageId, 34, troops_type.haeduan, 1);
+					log("Build a unit in " + vo.villageName);
+					api.build_units(vo.villageId, vo.locationId, troops_type.swordsman, 1);
+					// api.build_units(vo.villageId, 34, troops_type.haeduan, 1);
 				} else if(vo.villageName == 'K04') {
+					log("Build a unit in " + vo.villageName);
 					api.build_units(vo.villageId, 29, troops_type.swordsman, 1);
 				} else {
 					continue
